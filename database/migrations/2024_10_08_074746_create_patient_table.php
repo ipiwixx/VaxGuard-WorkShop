@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('patient', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
             $table->string('nom');
             $table->string('prenom');
             $table->char('numero_secu', length: 15)->unique();
+            $table->datetime('date_naissance');
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

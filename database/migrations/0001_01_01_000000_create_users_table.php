@@ -18,7 +18,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->char('telephone', length: 10)->unique();
             $table->char('numero_secu', length: 15)->unique();
-            $table->char('numero_rpps', length: 12)->unique();
+            $table->char('numero_rpps', length: 12)->unique()->nullable();
+            $table->char('code_postal', length: 5);
+            $table->string('ville');
+            $table->string('adresse');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

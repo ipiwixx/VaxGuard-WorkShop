@@ -30,13 +30,25 @@ class RegisteredUserController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+            'nom' => ['required', 'string', 'max:255'],
+            'prenom' => ['required', 'string', 'max:255'],
+            'numero_secu' => ['required', 'string', 'max:255'],
+            'telephone' => ['required', 'string', 'max:10'],
+            'ville' => ['required', 'string', 'max:255'],
+            'code_postal' => ['required', 'string', 'digits:5'],
+            'adresse' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
-            'name' => $request->name,
+            'nom' => $request->nom,
+            'prenom' => $request->prenom,
+            'numero_secu'=>$request->numero_secu,
+            'telephone'=>$request->telephone,
+            'ville'=>$request->ville,
+            'code_postal'=>$request->code_postal,
+            'adresse'=>$request->adresse,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
@@ -45,6 +57,11 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+
+        if ($user->role === 'Pediatre') {
+            return redirect()->route('dashboarddoctor');
+        }
+
+        return redirect(route('dashboarddoctor', absolute: false));
     }
 }

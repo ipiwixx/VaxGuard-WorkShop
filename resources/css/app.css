@@ -1,3 +1,474 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Mulish', sans-serif;
+    font-size: 15px;
+}
+
+.page-accueil {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    display: flex; 
+    justify-content: space-between; 
+    width: 100%;
+    padding: 5vh; 
+}
+
+.logos {
+    display: flex; 
+    align-items: center; 
+    flex: 1; 
+}
+
+.vaxguard-icon {
+    margin-right: 10vw; 
+}
+
+.logo, .vaxguard-icon {
+    height: 10vh; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly; 
+    align-items: center;
+    flex: 1; 
+}
+
+.nav-link{
+    text-decoration: none;
+    color: black;
+    font-size: large;
+}
+
+.main-content {
+    width: 100%;
+    text-align: center;
+    display: flex; /* Utiliser flexbox pour disposer les éléments */
+    flex-direction: column; /* Aligner les éléments en colonne */
+    align-items: center; /* Centrer horizontalement les éléments */
+}
+
+/*Style splash d'accueil*/
+.home-splash{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.home-image {
+    width: 740px; 
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px 0; 
+    width: 25%;
+}
+
+.btnLogin{
+    margin-top: 10%;
+    width: 32%;
+    border-radius: 55px; 
+    padding: 10px 20px; 
+    background-color: #007BFF; 
+    color: white;
+    border: none; 
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: background-color 0.3s; 
+}
+
+
+/*Style nos partenaires*/
+.partners {
+    width: 100%;
+}
+
+.partners-logos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permet aux logos de se répartir sur plusieurs lignes si nécessaire */
+}
+
+.partner-logo {
+    width: 150px; /* Ajustez la taille des logos */
+    margin: 10px; /* Espacement autour des logos */
+}
+
+/*Style avis*/
+.view {
+    width: 50%;
+    height: 285px;
+    background: linear-gradient( 180deg, rgb(178.07, 229.6, 252.88) 0%,
+                                        rgb(154.76, 215.84, 241.19) 39.1%, 
+                                        rgba(45.38, 11.69, 255, 0.71) 100% );
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    margin: 2vw 0; 
+}
+
+.view-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.view-users{
+    display: flex;
+}
+
+.view-info-users{
+    margin-top: 10%;
+}
+
+.view-comment{
+    width: 50%;
+}
+
+.view-image {
+    border-radius: 50%; /* Ajout d'un style pour l'image du commentaire */
+    width: 100px; /* Ajustez la taille selon votre design */
+    margin-right: 20px;
+}
+
+/*Style footer*/
+.footer {
+    width: 100%;
+    display: flex; 
+    justify-content: space-between; 
+    background-color: #92cef6; 
+    padding: 20px; 
+}
+
+.container {
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    width: 50%; 
+}
+
+.logos-footer {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 10px; 
+}
+
+.logos-footer img {
+    height: 5vh; 
+    max-width: 60%;
+    margin-right: 10px;
+}
+
+.text-footer {
+    max-width: 400px; 
+}
+
+.support {
+    display: flex; 
+    justify-content: space-evenly; 
+    align-items: flex-start; 
+    width: 50%; 
+    padding-bottom: 2%;
+}
+
+.support h2 {
+    margin: 0 0 10px; 
+}
+
+.support ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+li{
+    padding-bottom: 7%;
+}
+
+/* Styles pour le main-dashboard */
+.main-container {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%; 
+    padding: 20px;
+    align-items: stretch;
+}
+.left-column {
+    width: 20%; 
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+.center-column {
+    width: 50%; 
+    padding: 10px; 
+
+}
+.right-column {
+    width: 30%;
+    padding: 10px; 
+}
+
+.separator {
+    width: 2px; 
+    background-color: #000;
+    height: auto; 
+    flex-shrink: 0;
+}
+
+.nav-aside {
+    display: block; /* Afficher les liens comme des blocs */
+    padding: 10px 15px; /* Espacement intérieur pour les liens */
+    color: #333; /* Couleur du texte */
+    text-decoration: none; /* Enlever le soulignement */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s; /* Transition douce pour le changement de couleur */
+}
+
+.nav-aside:hover {
+    background-color: #e0f7fa; /* Couleur de fond au survol */
+}
+
+
+.container-dashboard{
+    width: 90%;
+    height: 285px;
+    background: linear-gradient( 180deg, rgb(178.07, 229.6, 252.88) 0%,
+                                        rgb(154.76, 215.84, 241.19) 39.1%, 
+                                        rgba(45.38, 11.69, 255, 0.71) 100% );
+    margin: 2vw 0; 
+}
+
+.container-dashboard h3 {
+    margin: 0;
+    font-size: 24px;
+    position: relative;
+}
+
+.visit-count {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+}
+
+.top-container-dashboard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 4%;
+}
+
+.stethoscope{
+    position: absolute;
+}
+
+.analyze-dashboard {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.analyze-dashboard div {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2px;
+    flex: 0 0 30%; 
+    margin: 0 5px;  
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.analyze-dashboard p {
+    margin: 5px 0;
+}
+
+
+.patient-info {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;   
+    position: relative;         
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.arrow-up {
+    color: green;
+}
+
+.arrow-down {
+    color: red;
+}
+
+/*Alerts*/
+.news-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+.news-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.news-header h2 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-left: 10px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+}
+
+.news-content {
+    font-size: 16px;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.news-footer {
+    text-align: right;
+}
+
+.btn {
+    background-color: #1abc9c;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #16a085;
+}
+
+ /*Liste patients*/
+.patient-card {
+    display: flex; /* Pour disposer les éléments horizontalement */
+    align-items: center; /* Aligne verticalement le contenu */
+    margin-bottom: 10px; /* Espace entre les cartes */
+    border: 1px solid #ddd; /* Bordure pour les cartes */
+    padding: 10px; /* Espace interne */
+    border-radius: 5px; /* Coins arrondis */
+    background-color: #fff; /* Couleur de fond */
+}
+
+.patient-initials {
+    width: 40px; /* Largeur fixe pour les initiales */
+    height: 40px; /* Hauteur fixe pour les initiales */
+    border-radius: 50%; /* Pour rendre le fond circulaire */
+    background-color: #4CAF50; /* Couleur d'arrière-plan */
+    color: white; /* Couleur du texte */
+    display: flex; /* Pour centrer le texte */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    font-weight: bold; /* Met le texte en gras */
+    margin-right: 10px; /* Espace à droite des initiales */
+}
+
+.patient-info {
+    flex: 1; /* Prend tout l'espace restant */
+}
+
+.patient-info h2 {
+    margin: 0; /* Supprime la marge par défaut */
+}
+
+.gender-age {
+    margin: 0; /* Supprime la marge par défaut */
+}
+
+.time {
+    color: #888; /* Couleur gris pour l'heure */
+}
+
+.details {
+    display: none; /* Cache les détails par défaut */
+    margin-top: 10px; /* Espace au-dessus des détails */
+}
+
+.time {
+    color: gray;
+    font-weight: bold;
+}
+
+/* Patient info styles */
+.vaccine-container {
+    display: flex;
+    flex-direction: column; 
+    padding: 20px; 
+    width: 90%;
+}
+
+.infos-patients {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Table styles */
+.array-vaccine {
+    margin-top: 20px; 
+}
+
+table {
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+thead {
+    background-color: #007bff; 
+    color: white; 
+}
+
+th, td {
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    text-align: left; 
+}
+
+th {
+    font-weight: bold; 
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2; 
+}
+
+tbody tr:hover {
+    background-color: #e0e0e0; 
+}

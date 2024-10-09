@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\Appartenir;
 use App\Models\RendezVous;
+use Carbon\Carbon;
 
 class Patient extends Model
 {
@@ -25,6 +26,7 @@ class Patient extends Model
         'prenom',
         'numero_secu',
         'date_naissance',
+        'genre'
     ];
 
     /**
@@ -42,4 +44,10 @@ class Patient extends Model
     {
         return $this->hasMany(RendezVous::class);
     }
+
+    public function getAgeAttribute()
+    {
+        return Carbon::parse($this->date_naissance)->age; // Utilisation de Carbon pour obtenir l'âge
+    }
+
 }

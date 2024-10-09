@@ -1,0 +1,223 @@
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Mulish', sans-serif;
+    font-size: 15px;
+}
+
+.page-accueil {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    display: flex; 
+    justify-content: space-between; 
+    width: 100%;
+    padding: 5vh; 
+}
+
+.logos {
+    display: flex; 
+    align-items: center; 
+    flex: 1; 
+}
+
+.vaxguard-icon {
+    margin-right: 10vw; 
+}
+
+.logo, .vaxguard-icon {
+    height: 10vh; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly; 
+    align-items: center;
+    flex: 1; 
+}
+
+.nav-link{
+    text-decoration: none;
+    color: black;
+    font-size: large;
+}
+
+.main-content {
+    width: 100%;
+    text-align: center;
+    display: flex; /* Utiliser flexbox pour disposer les éléments */
+    flex-direction: column; /* Aligner les éléments en colonne */
+    align-items: center; /* Centrer horizontalement les éléments */
+}
+
+/*Style splash d'accueil*/
+.home-splash{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.home-image {
+    width: 740px; 
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px 0; 
+    width: 25%;
+}
+
+.btnLogin{
+    margin-top: 10%;
+    width: 32%;
+    border-radius: 55px; 
+    padding: 10px 20px; 
+    background-color: #007BFF; 
+    color: white;
+    border: none; 
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: background-color 0.3s; 
+}
+
+/*Style nos partenaires*/
+.partners {
+    width: 100%;
+}
+
+.partners-logos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permet aux logos de se répartir sur plusieurs lignes si nécessaire */
+}
+
+.partner-logo {
+    width: 150px; /* Ajustez la taille des logos */
+    margin: 10px; /* Espacement autour des logos */
+}
+
+/*Style avis*/
+.view {
+    width: 50%;
+    height: 285px;
+    background: linear-gradient( 180deg, rgb(178.07, 229.6, 252.88) 0%,
+                                        rgb(154.76, 215.84, 241.19) 39.1%, 
+                                        rgba(45.38, 11.69, 255, 0.71) 100% );
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    margin: 2vw 0; 
+}
+
+.view-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.view-users{
+    display: flex;
+}
+
+.view-info-users{
+    margin-top: 10%;
+}
+
+.view-comment{
+    width: 50%;
+}
+
+.view-image {
+    border-radius: 50%; /* Ajout d'un style pour l'image du commentaire */
+    width: 100px; /* Ajustez la taille selon votre design */
+    margin-right: 20px;
+}
+
+/*Style footer*/
+.footer {
+    width: 100%;
+    display: flex; 
+    justify-content: space-between; 
+    background-color: #92cef6; 
+    padding: 20px; 
+}
+
+.container {
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    width: 50%; 
+}
+
+.logos-footer {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 10px; 
+}
+
+.logos-footer img {
+    height: 5vh; 
+    max-width: 60%;
+    margin-right: 10px;
+}
+
+.text-footer {
+    max-width: 400px; 
+}
+
+.support {
+    display: flex; 
+    justify-content: space-evenly; 
+    align-items: flex-start; 
+    width: 50%; 
+    padding-bottom: 2%;
+}
+
+.support h2 {
+    margin: 0 0 10px; 
+}
+
+.support ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+li{
+    padding-bottom: 7%;
+}
+
+
+
+.main-dashboard {
+            display: flex; 
+            width: 100%; 
+            padding: 20px; /* Ajouter un peu de padding */
+        }
+        .left-column {
+            width: 10%; /* 10% pour la colonne gauche */
+            background-color: #f0f0f0; /* Couleur de fond pour la colonne gauche */
+            padding: 10px; /* Padding pour le contenu */
+        }
+        .center-column {
+            width: 70%; /* 70% pour la colonne centrale */
+            background-color: #ffffff; /* Couleur de fond pour la colonne centrale */
+            padding: 10px; /* Padding pour le contenu */
+        }
+        .right-column {
+            width: 20%; /* 20% pour la colonne droite */
+            background-color: #e0e0e0; /* Couleur de fond pour la colonne droite */
+            padding: 10px; /* Padding pour le contenu */
+        }

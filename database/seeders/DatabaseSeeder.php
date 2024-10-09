@@ -8,6 +8,7 @@ use App\Models\TypeProfil;
 use App\Models\Vaccin;
 use App\Models\Age;
 use App\Models\RendezVous;
+use App\Models\Appartenir;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -983,6 +984,65 @@ class DatabaseSeeder extends Seeder
                 'user_id' => 1,
                 'patient_id' => 14,
                 'vaccin_id' => 4
+            ],
+        ]);
+
+        Appartenir::insert([
+            [
+                'user_id' => 1,
+                'patient_id' => 1
+            ],
+            [
+                'user_id' => 2,
+                'patient_id' => 1
+            ],
+            [
+                'user_id' => 1,
+                'patient_id' => 2
+            ],
+            [
+                'user_id' => 4,
+                'patient_id' => 2
+            ],
+            [
+                'user_id' => 1,
+                'patient_id' => 3
+            ],
+            [
+                'user_id' => 6,
+                'patient_id' => 3
+            ],
+            [
+                'user_id' => 1,
+                'patient_id' => 4
+            ],
+            [
+                'user_id' => 8,
+                'patient_id' => 4
+            ],
+            [
+                'user_id' => 1,
+                'patient_id' => 5
+            ],
+            [
+                'user_id' => 10,
+                'patient_id' => 5
+            ],
+            [
+                'user_id' => 1,
+                'patient_id' => 6
+            ],
+            [
+                'user_id' => 12,
+                'patient_id' => 6
+            ],
+            [
+                'user_id' => 1,
+                'patient_id' => 14
+            ],
+            [
+                'user_id' => 14,
+                'patient_id' => 14
             ],
         ]);
     }

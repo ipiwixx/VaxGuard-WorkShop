@@ -1,66 +1,157 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Vaxguard
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Description
+Vaxguard est une application web permettant de gérer les carnets de vaccination et de santé des enfants. Le projet inclut une interface pour les pédiatres afin de suivre les informations médicales de leurs patients et d'envoyer des rappels automatisés aux parents.
 
-## About Laravel
+Ce projet a été réalisé par **Amyne El Aichouni**, **Antoine Espinoza**, **Anthony Girard**, et **Yassine Laasal**, étudiants en première année de Master EISI à l'EPSI Montpellier.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Prérequis
+Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Composer :
+Composer est un gestionnaire de dépendances PHP qui permet d’installer et de gérer les bibliothèques utilisées dans le projet.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#### Vérifier si Composer est installé :
+```bash
+composer -V
+```
+Si Composer est installé, la version sera affichée. Si ce n’est pas le cas, suivez les étapes ci-dessous pour l’installer :
+- Allez sur la page de téléchargement du site web de Composer.
+- Suivez les instructions pour installer Composer sur votre système (Windows, Mac, ou Linux).
+- Vérifiez l'installation en exécutant la commande `composer -V` à nouveau.
 
-## Learning Laravel
+### PHP 8.2 ou supérieur :
+PHP est le langage de programmation utilisé pour ce projet.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### Vérifier si PHP est installé :
+```bash
+php -v
+```
+Si PHP est installé, la version de PHP sera affichée. Si la version affichée est inférieure à 8.2, ou si PHP n’est pas installé, suivez les étapes suivantes :
+- Allez sur [PHP.net](https://php.net)
+- Téléchargez la version de PHP correspondant à votre système d'exploitation.
+- Suivez les instructions d'installation.
+- **Remarque :** Assurez-vous que le chemin vers le dossier `php` est ajouté à vos variables d'environnement (PATH) pour pouvoir utiliser PHP depuis n'importe quel répertoire.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Sur Windows, vous pouvez également installer PHP via des outils comme XAMPP, WAMP ou MAMP qui incluent PHP par défaut.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### MySQL
+MySQL est un système de gestion de base de données relationnelle utilisé pour stocker les informations du projet.
 
-## Laravel Sponsors
+#### Vérifier si MySQL est installé :
+```bash
+mysql --version
+```
+Si MySQL est installé, la version sera affichée. Si ce n’est pas le cas, suivez les instructions ci-dessous pour l’installer :
+- Allez sur [MySQL.com](https://mysql.com) pour télécharger l’installateur.
+- Suivez les étapes d’installation pour configurer MySQL sur votre machine.
+- Une fois l’installation terminée, lancez le service MySQL et créez une base de données nommée `vaxguard_db`.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+**Alternative :** Vous pouvez également utiliser l'outil phpMyAdmin inclus dans les serveurs locaux (XAMPP, WAMP, MAMP).
 
-### Premium Partners
+### Serveur Web Local (XAMPP/WAMP/MAMP)
+Un serveur web local est nécessaire pour héberger l’application Laravel en local.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+#### Vérifier si un serveur local est installé :
+- Ouvrez votre navigateur et tapez l’URL suivante : `http://localhost/`.
+- Si une page d’accueil de XAMPP, WAMP ou MAMP s’affiche, cela signifie qu’un serveur local est déjà installé et fonctionnel.
 
-## Contributing
+#### Installation d’un serveur Web local :
+- Choisissez un des serveurs suivants en fonction de votre système d'exploitation :
+  - XAMPP : Disponible sur Windows, Mac et Linux.
+  - WAMP : Disponible uniquement sur Windows.
+  - MAMP : Disponible sur Mac et Windows.
+- Téléchargez et installez le serveur local de votre choix.
+- Lancez le serveur et assurez-vous que les services Apache et MySQL sont en cours d'exécution.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Avec ces prérequis installés et configurés, vous êtes prêt à installer et lancer le projet Vaxguard sur votre machine locale !
 
-## Code of Conduct
+## Installation
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+1. **Télécharger et Extraire le Projet**  
+   Téléchargez le `.zip` du projet depuis GitHub ou récupérez-le dans le dossier partagé, puis extrayez-le dans le répertoire souhaité sur votre machine.
 
-## Security Vulnerabilities
+2. **Configuration de l’Environnement**  
+   Ouvrez un terminal et accédez au répertoire du projet extrait, puis suivez les étapes ci-dessous :
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+   **Installation des Dépendances :**  
+   Exécutez la commande suivante pour installer toutes les dépendances Laravel :
+   ```bash
+   composer install
+   ```
+
+   **Copie du Fichier de Configuration :**  
+   Créez une copie du fichier `.env.example` et renommez-la en `.env` :
+   ```bash
+   cp .env.example .env
+   ```
+
+   **Génération de la Clé d’Application :**  
+   Générez la clé d’application Laravel nécessaire au fonctionnement du projet :
+   ```bash
+   php artisan key:generate
+   ```
+
+   **Configuration de la Base de Données :**  
+   Ouvrez le fichier `.env` dans un éditeur de texte (ex: VS Code, Notepad++) et configurez les informations de connexion à votre base de données MySQL locale :
+   ```bash
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=vaxguard_db
+   DB_USERNAME=root
+   DB_PASSWORD=your_password
+   ```
+   Remarque : Assurez-vous que la base de données `vaxguard_db` est bien créée dans MySQL. Si ce n’est pas le cas, créez-la manuellement ou via un outil comme phpMyAdmin.
+
+3. **Migration de la Base de Données**  
+   Une fois la configuration terminée, exécutez les migrations pour créer les tables nécessaires dans la base de données :
+   ```bash
+   php artisan migrate
+   ```
+
+4. **Seeding de la Base de Données**  
+   Remplissez la base de données avec des données d’exemple (patients, familles, utilisateurs, etc.) en exécutant la commande suivante :
+   ```bash
+   php artisan db:seed
+   ```
+
+## Lancement de l’Application
+Pour lancer le serveur de développement Laravel, utilisez la commande suivante :
+```bash
+php artisan serve
+```
+Cela démarrera l’application sur `http://127.0.0.1:8000`. Ouvrez cette URL dans votre navigateur pour accéder à l’application.
+
+## Structure du Projet
+- `app/` : Contient les modèles, contrôleurs et logiques métier de l’application.
+- `resources/views/` : Contient les vues (templates Blade) de l’application.
+- `routes/web.php` : Contient les routes pour la navigation de l’application.
+- `database/migrations/` : Contient les scripts de migration pour la base de données.
+
+## Dépannage
+
+1. **Erreurs lors de la Migration**  
+   Si vous rencontrez des erreurs lors de la migration, assurez-vous que votre configuration `.env` est correcte et que la base de données `vaxguard_db` est bien créée.
+
+2. **Problèmes de Connexion à la Base de Données**  
+   Vérifiez que le nom de la base de données, l’utilisateur et le mot de passe spécifiés dans le fichier `.env` correspondent à votre configuration locale.
+
+3. **Problèmes de Serveur Web**  
+   Si le serveur ne démarre pas, assurez-vous que le port 8000 est disponible et non utilisé par un autre service.
+
+## Contribuer au Projet
+Toute contribution est la bienvenue ! Pour contribuer :
+- Forkez le projet.
+- Créez une branche avec vos modifications :
+  ```bash
+  git checkout -b feature/modification
+  ```
+- Commitez vos changements :
+  ```bash
+  git commit -m 'Add some feature'
+  ```
+- Soumettez une pull request sur le dépôt principal.
 
 ## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Vaxguard est sous licence MIT. Veuillez consulter le fichier LICENSE pour plus d'informations.

@@ -962,25 +962,25 @@ class DatabaseSeeder extends Seeder
                 'vaccin_id' => 1
             ],
             [
-                'date_rdv' => Carbon::create(2024, 10, 11, 14, 30, 0),  // Date RDV au 12 octobre 2024, 14h30
+                'date_rdv' => Carbon::create(2024, 10, 11, 15, 00, 0),  // Date RDV au 12 octobre 2024, 14h30
                 'user_id' => 1,
                 'patient_id' => 2,
                 'vaccin_id' => 7
             ],
             [
-                'date_rdv' => Carbon::create(2024, 10, 11, 14, 30, 0),  // Date RDV au 12 octobre 2024, 14h30
+                'date_rdv' => Carbon::create(2024, 10, 11, 15, 30, 0),  // Date RDV au 12 octobre 2024, 14h30
                 'user_id' => 1,
                 'patient_id' => 6,
                 'vaccin_id' => 2
             ],
             [
-                'date_rdv' => Carbon::create(2024, 10, 11, 14, 30, 0),  // Date RDV au 12 octobre 2024, 14h30
+                'date_rdv' => Carbon::create(2024, 10, 11, 16, 00, 0),  // Date RDV au 12 octobre 2024, 14h30
                 'user_id' => 1,
                 'patient_id' => 5,
                 'vaccin_id' => 1
             ],
             [
-                'date_rdv' => Carbon::create(2024, 10, 11, 14, 30, 0),  // Date RDV au 12 octobre 2024, 14h30
+                'date_rdv' => Carbon::create(2024, 10, 11, 16, 30, 0),  // Date RDV au 12 octobre 2024, 14h30
                 'user_id' => 1,
                 'patient_id' => 14,
                 'vaccin_id' => 4

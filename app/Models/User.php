@@ -62,12 +62,16 @@ class User extends Authenticatable
     /**
      * relation 1,1 avec type_profil
      */
+    /**
+     * relation 1,1 avec type_profil
+     */
     public function type_profil(): BelongsTo
     {
         return $this->belongsTo(TypeProfil::class, 'id_vaccin');
     }
 
     /**
+     * relation 0,N avec rendez_vous
      * relation 0,N avec rendez_vous
      */
     public function rendez_vous(): HasMany
@@ -76,6 +80,7 @@ class User extends Authenticatable
     }
 
     /**
+     * relation 0,N avec appartenir
      * relation 0,N avec appartenir
      */
     public function appartenir(): HasMany

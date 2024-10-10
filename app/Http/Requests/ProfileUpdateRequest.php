@@ -18,10 +18,10 @@ class ProfileUpdateRequest extends FormRequest
         return [
             'nom' => ['required', 'string', 'max:255'],
             'prenom' => ['required', 'string', 'max:255'],
-            'numero_secu' => ['required', 'string', 'max:255'],
-            'telephone' => ['required', 'string', 'max:10'],
+            'numero_secu' => ['required', 'string', 'size:15', 'regex:/^\d{5}$/'],
+            'telephone' => ['required', 'string', 'size:10', 'regex:/^\d{5}$/'],
             'ville' => ['required', 'string', 'max:255'],
-            'code_postal' => ['required', 'string', 'digit:5'],
+            'code_postal' => ['required', 'string', 'size:5', 'regex:/^\d{5}$/'],
             'adresse' => ['required', 'string', 'max:255'],
             'email' => [
                 'required',

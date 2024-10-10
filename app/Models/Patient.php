@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\Appartenir;
 use App\Models\RendezVous;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class Patient extends Model
 {
     use HasFactory;
 
+    // Définit le nom de la table
     // Définit le nom de la table
     protected $table = 'patient';
 
@@ -33,6 +33,7 @@ class Patient extends Model
 
     /**
      * relation 0,N avec appartenir
+     * relation 0,N avec appartenir
      */
     public function appartenir(): HasMany
     {
@@ -40,6 +41,7 @@ class Patient extends Model
     }
 
     /**
+     * relation 0,N avec rendez-vous
      * relation 0,N avec rendez-vous
      */
     public function rendez_vous(): HasMany

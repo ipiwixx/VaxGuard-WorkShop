@@ -7,6 +7,7 @@ window.Alpine = Alpine;
 Alpine.start();
 
 function redirectToLogin() {
+    // Redirige vers la page de vaccination de connexion
     window.location.href = '/login'; 
 }
 

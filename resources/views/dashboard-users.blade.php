@@ -1,38 +1,37 @@
 @extends('base')
 
-@section('title', 'Tableau de bord pediatre - VaxGuard')
+@section('title', 'Tableau de bord utilisateur - VaxGuard')
 
 @section('content')
 <div class="main-container">
 @include('components.left-column')
-
-
                 <div class="center-column">
-                    <h2>Bonjour, Dr {{ Auth::user()->nom }} ! </h2>
+                    <h2>Bonjour, {{Auth::user()->prenom}} {{ Auth::user()->nom }} ! </h2>
                     <div class="container-dashboard">
-                        <div class="top-container-dashboard">
-                            <div class="visits">
-                                <h3>Visites du jour:</h3>
-                                <p class="visit-count">25</p>
-                            </div>
-                            <img src="{{ asset('images/Stetoscopepage web.png') }}" alt="Stéthoscope" class="Stethoscope" />
-                        </div>
-                        <div class="analyze-dashboard">
-                            <div class="new-patients">
-                                <p>Nouveaux patients</p>
-                                <div class="patient-info">
-                                    <p class="patient-count">40</p>
-                                    <p class="percentage green">51% <span class="arrow-up">↑</span></p>
+   
+                            @foreach($patients as $patient)
+                                <div class="patient-container">
+                                    <div class="patient-infos">
+                                        <h2>{{ $patient->prenom }} {{ $patient->nom }}</h2>
+                                        <p>{{ $patient->age }} mois</p>
+
+                                        @if($patient->rendez_vous->isNotEmpty())
+                                            @foreach($patient->rendez_vous as $rendezVous)
+                                                <p class="next-vaccine">Prochain vaccin : {{ $rendezVous->vaccin ? $rendezVous->vaccin->label : 'Vaccin non trouvé' }}</p>
+                                                <p class="rdv">Rendez-vous pris le {{ \Carbon\Carbon::parse($rendezVous->date_rdv)->format('d/m/Y') }} à {{ \Carbon\Carbon::parse($rendezVous->date_rdv)->format('H:i') }}</p>
+                                            @endforeach
+                                        @else
+                                            <p>Aucun rendez-vous prévu.</p>
+                                        @endif
+                                    </div>
+                                    <div class="avatar">
+                                    <a href="{{ route('vaccine-users.show', $patient->id) }}">
+                                        <img src="images/avatar.jpg" alt="Avatar de {{ $patient->prenom }} {{ $patient->nom }}" class="avatar-img">
+                                    </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="old-patients">
-                                <p>Ancien patients</p>
-                                <div class="patient-info">
-                                    <p class="patient-count">110</p>
-                                    <p class="percentage red">20% <span class="arrow-down">↓</span></p>
-                                </div>
-                            </div>
-                        </div>
+                            @endforeach
+
                     </div>
                     <div class="news-container">
                     <div class="news-header">
@@ -47,6 +46,6 @@
                     </div>
                 </div>
                 </div>
-                @include('components.right-column')
+                @include('components.right-column-users')
 </div>
 @endsection

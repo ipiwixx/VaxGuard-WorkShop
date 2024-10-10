@@ -12,6 +12,7 @@ class Appartenir extends Model
 {
     use HasFactory;
 
+    // Définit le nom de la table
     protected $table = 'appartenir';
 
     /**
@@ -25,7 +26,7 @@ class Appartenir extends Model
     ];
 
     /**
-     * Get the user.
+     * relation 1,1 avec user
      */
     public function user(): BelongsTo
     {
@@ -33,7 +34,7 @@ class Appartenir extends Model
     }
 
     /**
-     * Get the patient.
+     * relation 1,1 avec patient
      */
     public function patient(): BelongsTo
     {

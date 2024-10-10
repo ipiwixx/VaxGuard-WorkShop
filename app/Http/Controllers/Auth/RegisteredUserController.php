@@ -59,9 +59,9 @@ class RegisteredUserController extends Controller
 
 
         if ($user->role === 'Pediatre') {
-            return redirect()->route('dashboarddoctor');
+            return redirect()->route('dashboard-doctor');
         }
 
-        return redirect(route('dashboarddoctor', absolute: false));
+        return redirect(route('dashboard-doctor', absolute: false));
     }
 }

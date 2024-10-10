@@ -2,18 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 * {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
 }
 
+
 html, body {
     margin: 0;
     height: 100%;
-    font-family: 'Mulish', sans-serif;
     font-size: 15px;
+    font-family: 'Inter', sans-serif;
 }
+
+h1, h2, h3, h4 h5, h6{
+    font-family: 'Poppins', sans-serif ;
+}
+
+h1{
+    font-size: 2em !important;
+}
+
+h2{
+    font-size: 1.5em !important;
+}
+
+h3{
+    font-size: 1.17em !important;
+    margin-bottom: 2%;
+}
+
+h4{
+    font-size: 1em !important;
+}
+
 
 .page-accueil {
     background-color: #ffffff;
@@ -68,6 +93,7 @@ html, body {
 .home-splash{
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 2%;
 }
 
 
@@ -146,8 +172,8 @@ html, body {
 }
 
 .view-image {
-    border-radius: 50%; /* Ajout d'un style pour l'image du commentaire */
-    width: 100px; /* Ajustez la taille selon votre design */
+    border-radius: 50%;
+    width: 100px; 
     margin-right: 20px;
 }
 
@@ -158,6 +184,7 @@ html, body {
     justify-content: space-between; 
     background-color: #92cef6; 
     padding: 20px; 
+    margin-top: 5%;
 }
 
 .container {
@@ -191,8 +218,8 @@ html, body {
     padding-bottom: 2%;
 }
 
-.support h2 {
-    margin: 0 0 10px; 
+.support h3{
+    font-style: italic;
 }
 
 .support ul {
@@ -201,8 +228,8 @@ html, body {
     margin: 0; 
 }
 
-li{
-    padding-bottom: 7%;
+.support li{
+    padding-bottom: 5%;
 }
 
 /* Styles pour le main-dashboard */
@@ -248,6 +275,10 @@ li{
 
 .nav-aside:hover {
     background-color: #e0f7fa; /* Couleur de fond au survol */
+}
+
+.nav-link-add{
+    font-size: 15px;
 }
 
 
@@ -379,47 +410,48 @@ li{
 
  /*Liste patients*/
 .patient-card {
-    display: flex; /* Pour disposer les éléments horizontalement */
-    align-items: center; /* Aligne verticalement le contenu */
-    margin-bottom: 10px; /* Espace entre les cartes */
-    border: 1px solid #ddd; /* Bordure pour les cartes */
-    padding: 10px; /* Espace interne */
-    border-radius: 5px; /* Coins arrondis */
-    background-color: #fff; /* Couleur de fond */
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 10px; 
+    border: 1px solid #ddd; 
+    padding: 10px; 
+    border-radius: 5px; 
+    background-color: #fff; 
+    cursor: pointer;
 }
 
 .patient-initials {
-    width: 40px; /* Largeur fixe pour les initiales */
-    height: 40px; /* Hauteur fixe pour les initiales */
-    border-radius: 50%; /* Pour rendre le fond circulaire */
-    background-color: #4CAF50; /* Couleur d'arrière-plan */
-    color: white; /* Couleur du texte */
-    display: flex; /* Pour centrer le texte */
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    font-weight: bold; /* Met le texte en gras */
-    margin-right: 10px; /* Espace à droite des initiales */
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    background-color: #4CAF50;
+    color: white; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-weight: bold; 
+    margin-right: 10px; 
 }
 
 .patient-info {
-    flex: 1; /* Prend tout l'espace restant */
+    flex: 1; 
 }
 
 .patient-info h2 {
-    margin: 0; /* Supprime la marge par défaut */
+    margin: 0; 
 }
 
 .gender-age {
-    margin: 0; /* Supprime la marge par défaut */
+    margin: 0; 
 }
 
 .time {
-    color: #888; /* Couleur gris pour l'heure */
+    color: #888; 
 }
 
 .details {
-    display: none; /* Cache les détails par défaut */
-    margin-top: 10px; /* Espace au-dessus des détails */
+    display: none; 
+    margin-top: 10px; 
 }
 
 .time {
@@ -471,4 +503,87 @@ tbody tr:nth-child(even) {
 
 tbody tr:hover {
     background-color: #e0e0e0; 
+}
+
+/* Conteneur de chaque patient */
+.patient-container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px; 
+    border-bottom: 1px solid #ccc; 
+    height: 100%;
+}
+
+/* Infos du patient */
+.patient-infos {
+    flex: 1; 
+    margin-right: 20px; 
+}
+
+/* Style pour l'âge */
+.age {
+    margin: 5px 0; 
+}
+
+/* Style pour le rendez-vous */
+.next-vaccine {
+    margin-top:10%;
+}
+
+/* Avatar container */
+.avatar {
+    width: 150px; 
+    height: 150px; 
+    margin-bottom: 20%;
+}
+
+/* Style de l'image de l'avatar */
+.avatar-img {
+    width: 100%;
+    height: auto; 
+    border-radius: 50%; 
+}
+
+/*Style CRUD patients*/
+
+.container-crud {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5%; /* Ajout de la marge entre chaque ligne */
+}
+
+.form-group label {
+    flex-basis: 30%; /* La largeur du label à gauche */
+    text-align: left;
+}
+
+.form-group input {
+    flex-basis: 65%; /* La largeur de l'input à droite */
+    text-align: right; /* Alignement à droite du texte */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    margin-top: 20px; /* Un peu de marge au-dessus du bouton */
+    padding: 10px 20px;
+}
+
+.confidentiality-container{
+    margin-left: 5%;
+    margin-right: 5%;
 }

@@ -40,7 +40,7 @@ class AuthenticatedSessionController extends Controller
         if ($user->type_profil_id === 1) { // 1 pour pédiatre
             return redirect()->route('dashboard-doctor'); // Rediriger vers le tableau de bord du pédiatre
         } elseif ($user->type_profil_id === 2) { // 2 pour patient
-            return redirect()->route('dashboard'); // Rediriger vers le tableau de bord du patient
+            return redirect()->route('dashboard-users'); // Rediriger vers le tableau de bord du patient
         }
 
         return redirect()->intended(route('dashboard', absolute: false));

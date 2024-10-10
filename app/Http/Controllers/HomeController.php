@@ -11,4 +11,19 @@ class HomeController extends Controller
      {
          return view('home'); 
      }
+
+     public function confidentiality()
+     {
+        return view('confidentiality');
+     }
+
+     public function RGPD()
+     {
+        return view('RGPD');
+     }
+
+     public function conditions()
+     {
+        return view('conditions');
+     }
 }

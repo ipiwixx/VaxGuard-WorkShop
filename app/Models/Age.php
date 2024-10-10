@@ -11,6 +11,7 @@ class Age extends Model
 {
     use HasFactory;
 
+    // Définit le nom de la table
     protected $table = 'age';
 
     /**
@@ -24,9 +25,12 @@ class Age extends Model
         'vaccin_id',
     ];
 
-    // Get vaccin
+    /**
+     * relation 1,1 avec vaccin
+     */
     public function vaccin(): BelongsTo
     {
         return $this->belongsTo(Vaccin::class, 'id_vaccin');
     }
 }
+

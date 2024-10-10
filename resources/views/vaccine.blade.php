@@ -16,26 +16,45 @@
             
             <div class="array-vaccine">
                 <h3>Vaccins Obligatoires</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nom du Vaccin</th>
-                            <th>Date injection</th>
-                            <th>Observations</th>
-                            <th>Signature</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($vaccins as $vaccin)
+                <form >
+                    @csrf
+
+                    <table>
+                        <thead>
                             <tr>
-                                <td>{{ $vaccin->label }}</td>
-                                <td><!-- Logique date administrée --></td>
-                                <td><!-- Logique observations --></td>
-                                <td><!-- Logique signature --></td>
+                                <th>Nom du Vaccin</th>
+                                <th>Date injection</th>
+                                <th>Observations</th>
+                                <th>Signature</th>
                             </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach($vaccins as $vaccin)
+                                <tr>
+                                    <td>{{ $vaccin->label }}</td>
+                                    
+                                    <!-- Champ pour la date d'injection -->
+                                    <td>
+                                        <input type="date" name="injections[{{ $vaccin->id }}][date]" class="form-control">
+                                    </td>
+                                    
+                                    <!-- Champ pour les observations -->
+                                    <td>
+                                        <input type="text" name="injections[{{ $vaccin->id }}][observations]" class="form-control">
+                                    </td>
+                                    
+                                    <!-- Champ pour la signature -->
+                                    <td>
+                                        <input type="text" name="injections[{{ $vaccin->id }}][signature]" class="form-control">
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+
+                    <!-- Soumettre le formulaire -->
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </form>
             </div>
         </div>
     </div>

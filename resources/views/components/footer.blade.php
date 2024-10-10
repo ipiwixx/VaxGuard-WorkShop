@@ -9,20 +9,29 @@
                 </div>
             </div>
             <div class="support">
+                <div class="law">
+                    <h3>Mentions légales</h3>
+                    <ul>
+                        <li><strong>Nom de l'application :</strong> VAXGUARD</li>
+                        <li><strong>Responsable de publication :</strong> Vaxguard INC</li>
+                        <li><strong>Hébergeur :</strong> Vaxguard Services</li>
+                        <li><strong>Contact :</strong> contact@vaxguard.fr</li>
+                    </ul>
+                </div>
+                <div class="company">
+                    <h3>Entreprise</h3>
+                    <ul>
+                        <li><a href="{{ url('/confidentiality') }}">Politique de confidentialité</a></li>
+                        <li><a href="{{url('/RGPD') }}">RGPD</a></li>
+                        <li><a href="{{url('/conditions') }}">Conditions d'utilisation</a></li>
+                    </ul>
+                </div>
                 <div class="help">
                     <h3>Aide</h3>
                     <ul>
                         <li>Contacter le support</li>
                         <li>Instructions</li>
                         <li>Comment ça marche</li>
-                    </ul>
-                </div>
-                <div class="company">
-                    <h3>Entreprise</h3>
-                    <ul>
-                        <li>A propos</li>
-                        <li>Politique de confidentialité</li>
-                        <li>RGPD</li>
                     </ul>
                 </div>
             </div>            

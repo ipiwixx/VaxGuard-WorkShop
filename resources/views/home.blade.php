@@ -6,9 +6,9 @@
 <div class="page-accueil">
     <div class="home-splash">
         <div class="description">
-            <p>
-                VaxGuard s’efforce de vous apporter une solution adaptée à votre quotidien et tout ça à portée de main.
-            </p>
+            <h2>
+                VaxGuard – Votre partenaire pour la santé de votre enfant. 
+</h2>
             <button class="btnLogin" onclick="redirectToLogin()">Connexion</button>
         </div>
         <img src="{{ asset('images/vaccin.jpg') }}" alt="Image d'accueil" class="home-image">
@@ -34,11 +34,11 @@
                 </div>
                 <div class="view-info-users">
                     <strong>Edward</strong>
-                    <p>Père de Nathan 2 ans</p>
+                    <p>Père de Nathan 6 mois</p>
                 </div>
             </div>
             <div class="view-comment">
-                <p>Avec VaxGuard, plus besoin de penser au carnet de santé, tout est à portée de main.</p>
+                <p>Avec VaxGuard, plus besoin de penser au carnet de santé et de le chercher pendant des heures.</p>
             </div>
         </div>
     </div>

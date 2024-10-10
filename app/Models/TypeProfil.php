@@ -11,6 +11,7 @@ class TypeProfil extends Model
 {
     use HasFactory;
 
+    // Définit le nom de la table
     protected $table = 'type_profil';
 
     /**
@@ -24,7 +25,7 @@ class TypeProfil extends Model
     ];
 
     /**
-     * Get the users.
+     * relation 0,N avec user
      */
     public function users(): HasMany
     {

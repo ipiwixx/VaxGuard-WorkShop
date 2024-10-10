@@ -32,9 +32,9 @@
 
 
         <div class="mt-4">
-            <x-input-label for="numero_secu" :value="__('Numéro de Sécurité Sociale')" />
-            <x-text-input id="numero_secu" class="block mt-1 w-full" type="text" name="numero_secu" :value="old('numero_secu', $user->numero_secu)" required autocomplete="numero_secu" />
-            <x-input-error :messages="$errors->get('numero_secu')" class="mt-2" />
+            <x-input-label for="numero_rpps" :value="__('Numéro RPPS')" />
+            <x-text-input id="numero_rpps" class="block mt-1 w-full" type="text" name="numero_rpps" :value="old('numero_rpps', $user->numero_rpps)" required autocomplete="numero_rpps" />
+            <x-input-error :messages="$errors->get('numero_rpps')" class="mt-2" />
         </div>
 
 

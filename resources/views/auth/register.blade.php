@@ -15,11 +15,19 @@
             <x-input-error :messages="$errors->get('prenom')" class="mt-2" />
         </div>
 
-        <!-- Numéro de Sécurité Sociale -->
+        <!-- Condition pour afficher le champ Numéro RPPS ou Numéro de Sécurité Sociale -->
         <div class="mt-4">
-            <x-input-label for="numero_secu" :value="__('Numéro de Sécurité Sociale')" />
-            <x-text-input id="numero_secu" class="block mt-1 w-full" type="text" name="numero_secu" :value="old('numero_secu')" required autocomplete="numero_secu" />
-            <x-input-error :messages="$errors->get('numero_secu')" class="mt-2" />
+            @if(Auth::check() && Auth::user()->type_profil == 1)
+                <!-- Numéro de Sécurité Sociale pour un pédiatre authentifié -->
+                <x-input-label for="numero_secu" :value="__('Numéro de sécurité sociale')" />
+                <x-text-input id="numero_secu" class="block mt-1 w-full" type="text" name="numero_secu" :value="old('numero_secu')" required autocomplete="numero_secu" />
+                <x-input-error :messages="$errors->get('numero_secu')" class="mt-2" />
+            @else
+                <!-- Numéro RPPS si l'utilisateur n'est pas un pédiatre -->
+                <x-input-label for="numero_rpps" :value="__('Numéro RPPS')" />
+                <x-text-input id="numero_rpps" class="block mt-1 w-full" type="text" name="numero_rpps" :value="old('numero_rpps')" required autocomplete="numero_rpps" />
+                <x-input-error :messages="$errors->get('numero_rpps')" class="mt-2" />
+            @endif
         </div>
 
         

@@ -11,6 +11,9 @@ use App\Models\RendezVous;
 class Vaccin extends Model
 {
     use HasFactory;
+    
+    // Définit le nom de la table
+    protected $table = 'vaccin';
 
     /**
      * The attributes that are mass assignable.
@@ -22,10 +25,8 @@ class Vaccin extends Model
         'label',
     ];
 
-    protected $table = 'vaccin';
-
     /**
-     * Get the ages.
+     * relation 0,N avec age
      */
     public function ages(): HasMany
     {
@@ -33,7 +34,7 @@ class Vaccin extends Model
     }
 
     /**
-     * Get the rendez-vous.
+     * relation 0,N avec rendez_vous
      */
     public function rendez_vous(): HasMany
     {

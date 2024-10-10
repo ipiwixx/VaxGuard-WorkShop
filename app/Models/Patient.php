@@ -14,6 +14,7 @@ class Patient extends Model
 {
     use HasFactory;
 
+    // Définit le nom de la table
     protected $table = 'patient';
 
     /**
@@ -31,7 +32,7 @@ class Patient extends Model
     ];
 
     /**
-     * Get the user.
+     * relation 0,N avec appartenir
      */
     public function appartenir(): HasMany
     {
@@ -39,7 +40,7 @@ class Patient extends Model
     }
 
     /**
-     * Get the rendez_vous.
+     * relation 0,N avec rendez-vous
      */
     public function rendez_vous(): HasMany
     {
@@ -51,7 +52,7 @@ class Patient extends Model
         return Carbon::parse($this->date_naissance)->age; // Utilisation de Carbon pour obtenir l'âge
     }
 
-    /*
+    /**
      * getPatientsAvecVaccinsByPediatre
      * récupère les patients d'un pédiatre spécifique, filtrant uniquement ceux qui ont des rendez-vous et incluant les informations sur les vaccins liés à ces rendez-vous
      *
@@ -62,10 +63,11 @@ class Patient extends Model
         // Récupère les patients du pediatre
         $pediatres = Patient::whereHas('rendez_vous')->with('rendez_vous.vaccin')->where('user_id', $idPediatre)->get();
 
+        // Retourne les patients
         return $pediatres;
     }
 
-    /*
+    /**
      * getPatientsByPediatre
      * retourne tous les patients d'un pédiatre passé en paramètre
      *
@@ -76,21 +78,22 @@ class Patient extends Model
         // Récupère tous les patients du pédiatre
         $patients = Patient::join('appartenir', 'patient.id', '=', 'appartenir.patient_id')->where('user_id', $idPediatre)->get();
 
+        // Retourne les patients
         return $patients;
     }
 
-    /*
+    /**
      * getPatientsAvecRdv
      * récupère les patients d'un pédiatre spécifique qui ont des rendez-vous
      *
-     * @param int $idPatient
      * @param int $idPediatre
      * @return array
      */
-    public static function getPatientsAvecRdv(int $idPatient, int $idPediatre) {
-        // Récupère les patients du pediatre
-        $patients = Patient::whereHas('rendez_vous')->where('patient_id', $idPatient)->where('user_id',$idPediatre)->get();
+    public static function getPatientsAvecRdv(int $idPediatre) {
+        // Récupère les patients du pediatre qui ont un rendez-vous
+        $patients = Patient::whereHas('rendez_vous')->where('user_id',$idPediatre)->get();
 
+        // Retourne les patients
         return $patients;
     }
 }

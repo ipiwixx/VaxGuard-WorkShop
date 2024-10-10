@@ -59,13 +59,16 @@ class User extends Authenticatable
         ];
     }
 
+    /**
+     * relation 1,1 avec type_profil
+     */
     public function type_profil(): BelongsTo
     {
         return $this->belongsTo(TypeProfil::class, 'id_vaccin');
     }
 
     /**
-     * Get the rendez-vous.
+     * relation 0,N avec rendez_vous
      */
     public function rendez_vous(): HasMany
     {
@@ -73,20 +76,23 @@ class User extends Authenticatable
     }
 
     /**
-     * Get the appartenir.
+     * relation 0,N avec appartenir
      */
     public function appartenir(): HasMany
     {
         return $this->hasMany(Appartenir::class);
     }
 
+    /**
+     * relation avec patient
+     */
     public function patients(): HasManyThrough
     {
         return $this->hasManyThrough(Patient::class, Appartenir::class, 'user_id', 'id', 'id', 'patient_id');
 
     }
 
-    /*
+    /**
      * getPediatres
      * retourne tous les pédiatres
      *

@@ -13,6 +13,7 @@ class RendezVous extends Model
 {
     use HasFactory;
 
+    // Définit le nom de la table
     protected $table = 'rendez_vous';
 
     /**
@@ -29,7 +30,7 @@ class RendezVous extends Model
     ];
 
     /**
-     * Get the user.
+     * relation 1,1 avec user
      */
     public function user(): BelongsTo
     {
@@ -37,7 +38,7 @@ class RendezVous extends Model
     }
 
     /**
-     * Get the vaccin.
+     * relation 1,1 avec vaccin
      */
     public function vaccin(): BelongsTo
     {
@@ -45,7 +46,7 @@ class RendezVous extends Model
     }
 
     /**
-     * Get the patient.
+     * relation 1,1 avec patient
      */
     public function patient(): BelongsTo
     {

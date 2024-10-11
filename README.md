@@ -64,6 +64,18 @@ Un serveur web local est nécessaire pour héberger l’application Laravel en l
 - Téléchargez et installez le serveur local de votre choix.
 - Lancez le serveur et assurez-vous que les services Apache et MySQL sont en cours d'exécution.
 
+### Node.js :
+Node.js est nécessaire pour compiler le fichier app.css avec Tailwind CSS et app.js via Vite.
+
+#### Vérifier si Node.js est installé :
+```bash
+node -v
+```
+Si Node.js est installé, la version sera affichée. Si ce n’est pas le cas, suivez les étapes suivantes pour l’installer :
+- Allez sur le site [Node.js](https://nodejs.org/) et téléchargez la version recommandée pour votre système d'exploitation.
+- Suivez les instructions d'installation.
+- Vérifiez l'installation en exécutant `node -v` à nouveau pour vous assurer que Node.js est bien installé.
+
 Avec ces prérequis installés et configurés, vous êtes prêt à installer et lancer le projet Vaxguard sur votre machine locale !
 
 ## Installation
@@ -121,7 +133,14 @@ Pour lancer le serveur de développement Laravel, utilisez la commande suivante 
 ```bash
 php artisan serve
 ```
-Cela démarrera l’application sur `http://127.0.0.1:8000`. Ouvrez cette URL dans votre navigateur pour accéder à l’application.
+
+Dans un autre terminal, exécutez la commande suivante pour compiler les fichiers CSS et JavaScript :
+```bash
+npm run dev
+```
+
+Ces deux commandes doivent être lancées simultanément pour que l'application fonctionne correctement.
+L'application démarrera et sera alors accessible sur l'url `http://127.0.0.1:8000/` de votre navigateur.
 
 ## Structure du Projet
 - `app/` : Contient les modèles, contrôleurs et logiques métier de l’application.

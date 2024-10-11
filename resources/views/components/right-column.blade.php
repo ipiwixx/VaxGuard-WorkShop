@@ -17,14 +17,6 @@
                         </p>
                         <p class="age">{{ $patient->age }} </p>
                     </div>
-                    <div class="details" id="{{ $patient->id }}">
-                        <h3>Dernier Vaccin</h3>
-                        <p>{{ $patient->last_vaccine }}</p>
-                        <h3>Observation</h3>
-                        <p>{{ $patient->observations }}</p>
-                        <h3>Prescription</h3>
-                        <p>{{ $patient->prescription }}</p>
-                    </div>
                 </div>
             @endif
         @endforeach

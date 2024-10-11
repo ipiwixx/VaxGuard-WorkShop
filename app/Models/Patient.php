@@ -50,7 +50,11 @@ class Patient extends Model
     }
 
 
-    /**
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+        /**
      * getPatientsAvecVaccinsByPediatre
      * récupère les patients d'un pédiatre spécifique, filtrant uniquement ceux qui ont des rendez-vous et incluant les informations sur les vaccins liés à ces rendez-vous
      *

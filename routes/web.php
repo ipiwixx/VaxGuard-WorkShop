@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardDoctorController;
 use App\Http\Controllers\DashboardUsersController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PatientsController;
+use App\Http\Controllers\PatientsListController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VaccineController;
 use App\Http\Controllers\VaccineUsersController;
@@ -24,7 +25,7 @@ Route::get('/confidentiality', [HomeController::class, 'confidentiality']);
 Route::get('/RGPD', [HomeController::class, 'RGPD']);
 Route::get('/conditions', [HomeController::class, 'conditions']);
 
-
+Route::get('/patients-list', [PatientsListController::class, 'index']);
 
 
 Route::get('/dashboard-doctor', [DashboardDoctorController::class, 'index'])

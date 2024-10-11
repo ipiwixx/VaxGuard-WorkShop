@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 * {
     box-sizing: border-box;
@@ -20,6 +19,8 @@ html, body {
 
 h1, h2, h3, h4 h5, h6{
     font-family: 'Poppins', sans-serif ;
+    margin-bottom: 2%;
+    margin-top: 1%;
 }
 
 h1{
@@ -32,7 +33,6 @@ h2{
 
 h3{
     font-size: 1.17em !important;
-    margin-bottom: 2%;
 }
 
 h4{
@@ -255,6 +255,7 @@ h4{
 .right-column {
     width: 30%;
     padding: 10px; 
+    margin-left: 2%;
 }
 
 .separator {
@@ -562,24 +563,24 @@ tbody tr:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 5%; /* Ajout de la marge entre chaque ligne */
+    margin-bottom: 5%; 
 }
 
 .form-group label {
-    flex-basis: 30%; /* La largeur du label à gauche */
+    flex-basis: 30%; 
     text-align: left;
 }
 
 .form-group input {
-    flex-basis: 65%; /* La largeur de l'input à droite */
-    text-align: right; /* Alignement à droite du texte */
+    flex-basis: 65%; 
+    text-align: right; 
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
 .btn-primary {
-    margin-top: 20px; /* Un peu de marge au-dessus du bouton */
+    margin-top: 20px; 
     padding: 10px 20px;
 }
 
@@ -587,3 +588,4 @@ tbody tr:hover {
     margin-left: 5%;
     margin-right: 5%;
 }
+

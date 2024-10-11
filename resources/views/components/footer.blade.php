@@ -21,7 +21,7 @@
                 <div class="company">
                     <h3>Entreprise</h3>
                     <ul>
-                        <li><a href="{{ url('/confidentiality') }}">Politique de confidentialité</a></li>
+                        <li><a href="{{url('/confidentiality') }}">Politique de confidentialité</a></li>
                         <li><a href="{{url('/RGPD') }}">RGPD</a></li>
                         <li><a href="{{url('/conditions') }}">Conditions d'utilisation</a></li>
                     </ul>

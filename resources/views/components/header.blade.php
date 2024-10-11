@@ -15,6 +15,10 @@
             @elseif(Auth::user()->type_profil_id == 2) <!-- Vérifie si l'utilisateur est un patient -->
                 <a href="{{ url('/dashboard-users') }}" class="nav-link">Tableau de bord</a>
             @endif
+            <form action="{{ route('logout') }}" method="POST" class="nav-link">
+                @csrf
+                <button type="submit">Déconnexion</button>
+            </form>
         @endif
     </div>
 </header>

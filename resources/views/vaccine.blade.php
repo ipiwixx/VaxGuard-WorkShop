@@ -9,7 +9,7 @@
         <div class="vaccine-container">
             <h2>Carnet de Vaccination pour {{ $patient->prenom }} {{ $patient->nom }}</h2>
             <div class="infos-patients">
-                <h3>Détails du Patient</h3>
+                <strong>Détails du Patient</strong>
                 <p>Nom : {{ $patient->prenom }} {{ $patient->nom }}</p>
                 <p>Âge : {{ $patient->age }} mois</p>
             </div>
